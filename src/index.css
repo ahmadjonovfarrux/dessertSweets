@@ -1,0 +1,317 @@
+/* red-hat-text-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/red-hat-text-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-text-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/red-hat-text-v18-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* red-hat-text-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Text";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/red-hat-text-v18-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* Root styles */
+:root {
+  /* Colors */
+  --color-red: #c7380f;
+
+  --color-rose-900: #260f08;
+  --color-rose-500: #87635a;
+  --color-rose-400: #ad8a85;
+  --color-rose-300: #caafa7;
+  --color-rose-100: #f5eeec;
+  --color-rose-50: #fcf8f6;
+
+  --color-green: #1ea575;
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-primary: "Red Hat Text", sans-serif;
+
+  --font-size-preset-1: 5.6rem; /* 56px */
+  --line-height-preset-1: 1.209; /* 120.9% line-height */
+  --letter-spacing-preset-1: 0;
+
+  --font-size-preset-2: 2.4rem; /* 24px */
+  --line-height-preset-2: 1.25; /* 125% line-height */
+  --letter-spacing-preset-2: 0;
+
+  --font-size-preset-3: 1.6rem; /* 16px */
+  --line-height-preset-3: 1.5; /* 150% line-height */
+  --letter-spacing-preset-3: 0;
+
+  --font-size-preset-4: 1.4rem; /* 14px */
+  --line-height-preset-4: 1.5; /* 150% line-height */
+  --letter-spacing-preset-4: 0;
+}
+
+/* Global styles */
+html {
+  font-size: 61.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-rose-50);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+.btn {
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 600;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1216px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-container {
+  padding-top: 8.8rem;
+  padding-bottom: 8.8rem;
+  display: grid;
+  grid-template-columns: 67.5% calc(32.5% - 3.2rem);
+  gap: 3.2rem;
+}
+
+/* Desserts styles */
+.desserts-title {
+  font-size: var(--font-size-preset-1);
+  line-height: var(--line-height-preset-1);
+  margin-bottom: 3.2rem;
+}
+
+.desserts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.4rem;
+}
+
+.dessert-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.dessert-card-image {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.desserts-card-body {
+  margin-top: 3.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.desserts-card-category {
+  font-weight: 400;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  color: var(--color-rose-500);
+}
+
+.desserts-card-name {
+  font-weight: 600;
+  font-size: var(--font-size-preset-3);
+  line-height: var(--line-height-preset-3);
+  color: var(--color-rose-900);
+}
+
+.dessets-card-price {
+  font-weight: 600;
+  font-size: var(--font-size-preset-3);
+  line-height: var(--line-height-preset-3);
+  color: var(--color-red);
+}
+
+.btn-wrapper {
+  align-self: center;
+  margin-top: -22.8px;
+}
+
+.add-to-card-btn {
+  border: 2px solid var(--color-rose-400);
+  padding: 1.2rem 2.8rem;
+  transition: 0.3s;
+  background-color: var(--color-white);
+}
+
+.add-to-card-btn:hover {
+  border-color: var(--color-red);
+}
+
+.add-to-card-btn:hover .add-to-card-btn-wrapper {
+  color: var(--color-red);
+}
+
+.add-to-card-btn-wrapper {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.newBtnWrapper {
+  width: 16rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 999px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.newBtn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cart */
+
+.cart-title {
+  margin-bottom: 2.4rem;
+  font-weight: 700;
+  font-size: var(--font-size-preset-2);
+  line-height: var(--line-height-preset-2);
+  color: var(--color-red);
+}
+
+.cart-container {
+  width: inherit;
+  height: fit-content;
+  background-color: var(--color-white);
+  padding: 2.4rem;
+}
+
+/* Cart Modal styles */
+.cartWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.cartModal-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emptyCartBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emptyCartBox-text {
+  font-weight: 600;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  color: var(--color-rose-500);
+}
+
+.cartModal-title,
+.cartModal-amount {
+  font-weight: 600;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+}
+
+.cartModal-priceBox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cartModal-amount {
+  color: var(--color-red);
+}
+
+.carModal-price,
+.cartModal-amount {
+  font-weight: 400;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  color: var(--color-rose-500);
+}
+
+.cartModal-amount {
+  font-weight: 600;
+}
+
+.cartModal-icon {
+  font-size: 22px;
+  color: var(--color-rose-400);
+}
+
+/* Media styles */
+@media (max-width: 875px) {
+  .grid-container {
+    padding-top: 8.8rem;
+    padding-bottom: 8.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+}
+
+@media (max-width: 515px) {
+  .desserts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+}
