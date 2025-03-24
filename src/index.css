@@ -297,6 +297,27 @@ img {
   color: var(--color-rose-400);
 }
 
+.cartModal-totalPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totalPrice-text {
+  font-weight: 400;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  color: var(--color-rose-900);
+}
+
+.totalPrice-title {
+  font-weight: 700;
+  font-size: var(--font-size-preset-2);
+  line-height: var(--line-height-preset-2);
+  color: var(--color-rose-900);
+  margin-bottom: 0.8rem;
+}
+
 /* Media styles */
 @media (max-width: 875px) {
   .grid-container {

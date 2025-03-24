@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context/useGlobalContext";
 import { RiCloseCircleLine } from "react-icons/ri";
 
 function YourCart() {
-  const { cart: cart, dispatch } = useGlobalContext();
+  const { cart: cart, dispatch, totalPrice } = useGlobalContext();
 
   return (
     <div className="cart-container">
@@ -35,13 +35,16 @@ function YourCart() {
                   className="cartModal-icon"
                   onClick={() => dispatch({ type: "DELETE", payload: c.id })}
                 />
-                <div className="cartModal-totalPrice">
-                  <p className="totalPrice-text">Total Order</p>
-                  <h3>{totalPrice}</h3>
-                </div>
               </div>
             );
           })}
+        <div className="cartModal-totalPrice">
+          <p className="totalPrice-text">Total Order</p>
+          <h3 className="totalPrice-title">{totalPrice}$</h3>
+        </div>
+        <div className="carbon-box">
+          <img src="" alt="image of tree" />
+        </div>
       </div>
     </div>
   );

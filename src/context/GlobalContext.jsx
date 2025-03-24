@@ -1,10 +1,20 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 export const GlobalContext = createContext();
-const initialState = {
-  cart: [],
-  totalPrice: 0,
-  totalAmount: 0,
+// const initialState = {
+//   cart: [],
+//   totalPrice: 0,
+//   totalAmount: 0,
+// };
+console.log(localStorage.getItem("desserts"));
+const initialState = () => {
+  return localStorage.getItem("desserts")
+    ? JSON.parse(localStorage.getItem("desserts"))
+    : {
+        cart: [],
+        totalAmount: 0,
+        totalPrice: 0,
+      };
 };
 
 const reducer = (state, action) => {
@@ -43,26 +53,40 @@ const reducer = (state, action) => {
         ...state,
         cart: state.cart.filter((d) => d.id !== payload),
       };
-    // case "CALCULATE_TOTAL":
-    //   let { totalAmount, totalPrice } = state.cart.reduce((acc, curVal) => {
-
-    //   }, {
-    //     totalAmount: 0,
-    //     totalPrice: 0,
-    //   });
-    //   return {
-    //     ...state,
-    //     totalAmount,
-    //     totalPrice,
-    //   };
+    case "CALCULATE_TOTAL":
+      let { totalAmount, totalPrice } = state.cart.reduce(
+        (acc, curVal) => {
+          acc.totalAmount += curVal.amount;
+          acc.totalPrice += curVal.price * curVal.amount;
+          return acc;
+        },
+        {
+          totalAmount: 0,
+          totalPrice: 0,
+        }
+      );
+      return {
+        ...state,
+        totalAmount,
+        totalPrice,
+      };
     default:
       return state;
   }
 };
 
 export const GlobalContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  // console.log(state);
+  const [state, dispatch] = useReducer(reducer, initialState());
+
+  useEffect(() => {
+    dispatch({
+      type: "CALCULATE_TOTAL",
+    });
+  }, [state.cart]);
+
+  useEffect(() => {
+    localStorage.setItem("desserts", JSON.stringify(state));
+  }, [state.cart]);
 
   return (
     <GlobalContext.Provider value={{ ...state, dispatch }}>
