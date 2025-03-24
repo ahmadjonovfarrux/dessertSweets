@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { useGlobalContext } from "../context/useGlobalContext";
 import { RiCloseCircleLine } from "react-icons/ri";
+import Modal from "./Modal";
 
 function YourCart() {
   const { cart: cart, dispatch, totalPrice } = useGlobalContext();
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="cart-container">
@@ -43,8 +46,25 @@ function YourCart() {
           <h3 className="totalPrice-title">{totalPrice}$</h3>
         </div>
         <div className="carbon-box">
-          <img src="" alt="image of tree" />
+          <img src="../images/icon-carbon-neutral.svg" alt="image of tree" />
+          <p className="carbonBox-text">
+            This is a <span className="carbonBox-span">carbon-neutral </span>
+            delivery
+          </p>
         </div>
+        <button
+          className="btn cartModal-btn"
+          onClick={() => setOpenModal(true)}
+        >
+          Confirm Order
+        </button>
+        {openModal && (
+          <Modal
+            setOpenModal={setOpenModal}
+            cart={cart}
+            totalPrice={totalPrice}
+          />
+        )}
       </div>
     </div>
   );

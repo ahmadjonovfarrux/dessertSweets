@@ -318,6 +318,150 @@ img {
   margin-bottom: 0.8rem;
 }
 
+.carbon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-rose-50);
+  padding: 1.6rem 0;
+}
+
+.carbonBox-text {
+  font-weight: 400;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+}
+
+.carbonBox-span {
+  font-weight: 600;
+  color: var(--color-rose-900);
+}
+
+.cartModal-btn {
+  padding: 1.6rem 0;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border: none;
+}
+
+.cartModal-btn:hover {
+  opacity: 50%;
+}
+
+/* Modal */
+
+.modal-overlay {
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  position: fixed;
+}
+.modal-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 590px;
+  height: fit-content;
+  width: 100%;
+  background-color: #f4f4f4;
+  color: black;
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 100;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.modal-image {
+  width: 4.2rem;
+  height: 4.2rem;
+  margin-bottom: 2.7rem;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: var(--font-size-preset-2);
+  line-height: var(--line-height-preset-2);
+  color: var(--color-rose-900);
+}
+
+.modal-text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 3.2rem;
+}
+
+.modal-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.3rem;
+  background-color: var(--color-rose-100);
+  padding: 2.4rem;
+}
+
+.modal-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-content {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.modalDes-title {
+  font-weight: 600;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  color: var(--color-rose-900);
+  margin-bottom: 0.8rem;
+}
+
+.modalDes-amount {
+  display: flex;
+  gap: 0.8rem;
+  font-weight: 600;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  color: var(--color-red);
+}
+
+.modalDes-price {
+  font-weight: 400;
+  font-size: var(--font-size-preset-4);
+  line-height: var(--line-height-preset-4);
+  color: var(--color-rose-500);
+}
+
+.modalTot-price {
+  font-weight: 600;
+  font-size: var(--font-size-preset-3);
+  line-height: var(--line-height-preset-3);
+  color: var(--color-rose-900);
+}
+
+.totalPrice-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totalPrice-btn {
+  width: 100%;
+  margin-top: 3.2rem;
+  margin-bottom: 4rem;
+}
+
 /* Media styles */
 @media (max-width: 875px) {
   .grid-container {

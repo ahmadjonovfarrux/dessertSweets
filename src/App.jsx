@@ -2,6 +2,7 @@ import ProductList from "./components/ProductList";
 import YourCart from "./components/YourCart";
 import useFetch from "./hooks/useFetch";
 import Product from "./components/Product";
+import Modal from "./components/Modal";
 
 function App() {
   const {
